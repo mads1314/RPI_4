@@ -12,12 +12,18 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from gpiozero import LED
 from time import sleep
 import pygame
+import os
+import random
 
 from sample_alarm_latest.components.models import Timer
 
 led = LED(14)
 
 led.off()
+
+songs_collection = []
+
+songs_path = "/home/pi/Documents/Git_RPI_Project/RPI_4/sample_alarm_latest/songs/"
 
 def test_view(request):
     blocks = {'name': 'Kali :*'}
@@ -92,5 +98,15 @@ def test(request):
 
     led.on()
     
-    pygame.mixer.music.load("/home/pi/Documents/Git_RPI_Project/RPI_4/sample_alarm_latest/songs/song1.mp3")
+    pygame.mixer.music.load(get_random_songs())
     pygame.mixer.music.play()
+    
+def get_random_songs():
+    
+    for path, dirs, files in os.walk(songs_path):
+        for f in files:
+            songs_collection.append (f)
+            
+    random_selected_songs = random.choice (songs_collection)
+    
+    return songs_path + random_selected_songs

@@ -11,7 +11,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 from gpiozero import LED
 from time import sleep
-
+import pygame
 
 from sample_alarm_latest.components.models import Timer
 
@@ -21,6 +21,8 @@ led.off()
 
 def test_view(request):
     blocks = {'name': 'Kali :*'}
+    
+    pygame.mixer.init()
     
     if request.method == 'POST':
 
@@ -71,6 +73,8 @@ def stop_alarm(request):
     logging.warning("stop_alarm")
     
     led.off()
+    
+    pygame.mixer.music.stop()
 
 def call_scheduler(request, timer_data):
     scheduler = BackgroundScheduler(timezone='Asia/Kolkata')
@@ -87,3 +91,6 @@ def test(request):
     logging.warning("KALI O KALI")
 
     led.on()
+    
+    pygame.mixer.music.load("/home/pi/Documents/Git_RPI_Project/RPI_4/sample_alarm_latest/songs/song1.mp3")
+    pygame.mixer.music.play()

@@ -16,6 +16,10 @@ import os
 import random
 
 from sample_alarm_latest.components.models import Timer
+from tuya.devices import TuyaSmartSwitch
+
+device = TuyaSmartSwitch(username="er.madhav21@gmail.com", password="Password1314", location="EU", device="014033082cf4323237a7")
+
 
 led = LED(14)
 
@@ -78,7 +82,8 @@ def clear_alarm(request):
 def stop_alarm(request):
     logging.warning("stop_alarm")
     
-    led.off()
+    device.turn_off()
+    # led.off()
     
     pygame.mixer.music.stop()
 
@@ -96,7 +101,9 @@ def store_time(request, blocks):
 def test(request):
     logging.warning("KALI O KALI")
 
-    led.on()
+    device.turn_on()
+    
+    # led.on()
     
     pygame.mixer.music.load(get_random_songs())
     pygame.mixer.music.play()

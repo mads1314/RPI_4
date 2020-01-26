@@ -1,16 +1,27 @@
+<html>
 <h1>{{name}}</h1>
 <h1>{{time}}</h1>
 <h1>{{message}}</h1>
 
-<form method="post" name ="alarm_form">
-  {% csrf_token %}
+<head>
+<script>
+</script>
 
-  <input type="datetime-local" name="alarm_data">
+</head>
+<body>
 
-  <button type="submit" name="set">Set Timer</button>
-  <button type="submit" name="clear">Clear Timer</button>
 
-  {% if stop_button %}
-      <button type="submit" name="stop">Stop Timer</button>
-   {% endif %}
-</form>
+	<form method="post" name ="alarm_form">
+	  {% csrf_token %}
+
+	  <input type="datetime-local" name="alarm_data">
+
+	  <button type="submit" name="set">Set Timer</button>
+	  <button type="submit" name="clear">Clear Timer</button>
+
+	  {% if stop_button %}
+	      <button type="submit" name="stop">Stop Timer</button>
+	   {% endif %}
+	</form>
+</body>
+</html>

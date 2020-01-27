@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b607391-0039-4ff0-a9d0-846c7783cd18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample_alarm_latest/components/smart_bulb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_alarm_latest/components/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sample_alarm_latest/components/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_alarm_latest/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/sample_alarm_latest/templates/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_alarm_latest/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sample_alarm_latest/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/songs/song1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample_alarm_latest/components/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/sample_alarm_latest/configuration/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample_alarm_latest/components/read_properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/sample_alarm_latest/components/read_properties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample_alarm_latest/components/songs.py" beforeDir="false" afterPath="$PROJECT_DIR$/sample_alarm_latest/components/songs.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +37,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sample_alarm_latest/configuration" />
       <recent name="$PROJECT_DIR$/sample_alarm_latest/components" />
     </key>
   </component>

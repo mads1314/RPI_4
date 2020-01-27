@@ -20,5 +20,5 @@ from sample_alarm_latest.components import views
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
-    path('', views.test_view, name='test'),
+    path('', views.home_page_view, name='homepage'),
 ]

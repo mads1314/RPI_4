@@ -14,7 +14,8 @@
 	<form method="post" name ="alarm_form">
 	  {% csrf_token %}
 
-	  <input type="datetime-local" name="alarm_data">
+		<input type="date" name="date">
+		<input type="time" name="time">
 
 	  <button type="submit" name="set">Set Timer</button>
 	  <button type="submit" name="clear">Clear Timer</button>

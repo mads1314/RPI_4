@@ -1,11 +1,15 @@
 from sample_alarm_latest.components.models import Timer
 from sample_alarm_latest.components import switch
 import logging
+from datetime import datetime
 
 
 def set_alarm(request):
 
-    alarm_data = request.POST.get('alarm_data')
+    date_data = request.POST.get('date')
+    time_data = request.POST.get('time')
+
+    alarm_data = datetime.strptime(date_data + ' ' + time_data, '%Y-%m-%d %H:%M')
 
     Timer.objects.update_or_create(id=1, defaults={'timer': alarm_data})
 

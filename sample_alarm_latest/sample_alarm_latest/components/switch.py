@@ -8,7 +8,6 @@ tuya_properties = read_properties.get_properties('Tuya')
 
 pygame.mixer.init()
 
-# device = TuyaSmartSwitch(username="er.madhav21@gmail.com", password="Password1314", location="EU", device="014033082cf4323237a7")
 
 device = TuyaSmartSwitch(username=tuya_properties['username'], password=tuya_properties['password'], location=tuya_properties['location'],
                          device=tuya_properties['smart_bulb_id'])

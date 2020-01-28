@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from sample_alarm_latest.components import alarm, alarm_actions
+from sample_alarm_latest.components import scheduler, alarm_actions
 
 
 # led = LED(14)
@@ -18,7 +18,7 @@ def home_page_view(request):
             timer_data = alarm_actions.set_alarm(request)
 
             # Call background scheduler.py
-            alarm.schedule_alarm(timer_data)
+            scheduler.schedule_alarm(timer_data)
 
             blocks = {'stop_button': 'true', 'message': 'Alarm Set', 'time': timer_data}
 

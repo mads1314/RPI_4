@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/radio_fm.iml" filepath="$PROJECT_DIR$/.idea/radio_fm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../sample_alarm_latest/.idea/sample_alarm_latest.iml" filepath="$PROJECT_DIR$/../sample_alarm_latest/.idea/sample_alarm_latest.iml" />
+    </modules>
+  </component>
+</project>

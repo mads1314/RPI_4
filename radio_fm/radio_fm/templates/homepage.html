@@ -1,0 +1,30 @@
+<html>
+<body>
+    <h1>{{name}}</h1>
+    <h1>Playing -> {{frequency}}  {% if status == 'Mute' %} {{status}} {% endif %}</h1>
+
+	<form method="get" name ="radio_form" action="?frequency">
+	  {% csrf_token %}
+
+        <input type="string" name="frequency" value="{{frequency}}">
+
+	  <button type="submit" name="play">Play</button>
+
+	  {% if status == 'Play' or status == 'Unmute' %}
+	      <button type="submit" name="mute">Mute</button>
+	   {% endif %}
+
+        {% if status == 'Mute' %}
+	      <button type="submit" name="unmute">Unmute</button>
+	    {% endif %}
+	</form>
+    <form method="get" name ="radio_stop_form" action="/">
+	  {% csrf_token %}
+
+        {% if status == 'Play' %}
+	      <button type="submit" name="stop">Stop</button>
+	    {% endif %}
+	</form>
+
+</body>
+</html>

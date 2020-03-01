@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>{{name}}</h1>
+
     <h1>Playing -> {{frequency}}  {% if status == 'Mute' %} {{status}} {% endif %}</h1>
 
 	<form method="get" name ="radio_form" action="?frequency">
@@ -21,7 +21,7 @@
     <form method="get" name ="radio_stop_form" action="/">
 	  {% csrf_token %}
 
-        {% if status == 'Play' %}
+        {% if status == 'Play' or status == 'Unmute' or status == 'Mute'%}
 	      <button type="submit" name="stop">Stop</button>
 	    {% endif %}
 	</form>

@@ -6,9 +6,8 @@ import curses
 import curses.textpad
 import time
 
-# i2c = smbus.SMBus(1)  # newer version RASP (512 megabytes)
+i2c = smbus.SMBus(1)  # newer version RASP (512 megabytes)
 i2c_address = 0x60
-
 
 def init_radio(address):
     """initialize hardware"""
@@ -18,6 +17,7 @@ def init_radio(address):
 
 def set_freq(address, freq):
     """set Radio to specific frequency"""
+    print (type(freq))
     freq14bit = int(
         4 * (freq * 1000000 + 225000) / 32768)  # Frequency distribution for two bytes (according to the data sheet)
     freqH = freq14bit >> 8  # int (freq14bit / 256)
@@ -55,19 +55,19 @@ def mute(address):
 
 def play_radio_station(frequency):
     print(frequency)
-
-    # init_radio(i2c_address)
-    # set_freq(i2c_address, frequency)
+    
+    init_radio(i2c_address)
+    set_freq(i2c_address, float(frequency))
     time.sleep(1)
 
 
 def mute_radio_station():
     # init_radio(i2c_address)
-    # mute(i2c_address)
+    mute(i2c_address)
     print("Muted")
 
 
 def unmute_radio_station(frequency):
     # init_radio(i2c_address)
-    # set_freq(i2c_address, frequency)
+    set_freq(i2c_address, float(frequency))
     print("Unmuted")

@@ -1,7 +1,7 @@
 import os
 import random
 
-from sample_alarm_latest.components import read_properties
+from smart_kukuduku.components import read_properties
 
 songs_collection = []
 

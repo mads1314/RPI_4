@@ -1,4 +1,4 @@
-"""sample_alarm_latest URL Configuration
+"""smart_kukuduku URL Configuration
 
 The `urlpatterns` list routes URLs to template. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from sample_alarm_latest.components import views
+from smart_kukuduku.components import views
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),

@@ -1,5 +1,5 @@
 from apscheduler.schedulers.background import BackgroundScheduler
-from sample_alarm_latest.components import switch
+from smart_kukuduku.components import switch
 
 
 def schedule_alarm(timer_data):

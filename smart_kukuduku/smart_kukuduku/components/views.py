@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from sample_alarm_latest.components import scheduler, alarm_actions
+from smart_kukuduku.components import scheduler, alarm_actions
 
 
 # led = LED(14)

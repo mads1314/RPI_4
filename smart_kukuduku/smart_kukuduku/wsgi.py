@@ -1,5 +1,5 @@
 """
-WSGI config for sample_alarm_latest project.
+WSGI config for smart_kukuduku project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sample_alarm_latest.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'smart_kukuduku.settings')
 
 application = get_wsgi_application()

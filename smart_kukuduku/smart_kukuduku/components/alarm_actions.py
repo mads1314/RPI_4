@@ -1,5 +1,5 @@
-from sample_alarm_latest.components.models import Timer
-from sample_alarm_latest.components import switch
+from smart_kukuduku.components.models import Timer
+from smart_kukuduku.components import switch
 import logging
 from datetime import datetime
 

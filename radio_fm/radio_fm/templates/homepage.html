@@ -1,30 +1,103 @@
 <html>
+<head>
+	<title>Radio</title>
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
 <body>
+<!--    <h1>Playing -> {{frequency}}  {% if status == 'Mute' %} {{status}} {% endif %}</h1>-->
 
-    <h1>Playing -> {{frequency}}  {% if status == 'Mute' %} {{status}} {% endif %}</h1>
+<!--	<form method="get" name ="radio_form" action="?frequency">-->
+<!--	  {% csrf_token %}-->
 
-	<form method="get" name ="radio_form" action="?frequency">
-	  {% csrf_token %}
+<!--		<select id="frequency" name="frequency" value="{{frequency}}">-->
+<!--			<option value="91.1">Radio City</option>-->
+<!--			<option value="94.3">Radio One</option>-->
+<!--			<option value="93.5">Red FM</option>-->
+<!--			<option value="92.7">Big FM</option>-->
+<!--			<option value="98.3">Radio Mirchi</option>-->
+<!--			<option value="102.4">Mirchi Lover</option>-->
+<!--  		</select>-->
 
-        <input type="string" name="frequency" value="{{frequency}}">
+<!--	  <button type="submit" name="play">Play</button>-->
 
-	  <button type="submit" name="play">Play</button>
+<!--	  {% if status == 'Play' or status == 'Unmute' %}-->
+<!--	      <button type="submit" name="mute">Mute</button>-->
+<!--	   {% endif %}-->
 
-	  {% if status == 'Play' or status == 'Unmute' %}
-	      <button type="submit" name="mute">Mute</button>
-	   {% endif %}
+<!--        {% if status == 'Mute' %}-->
+<!--	      <button type="submit" name="unmute">Unmute</button>-->
+<!--	    {% endif %}-->
+<!--	</form>-->
+<!--    <form method="get" name ="radio_stop_form" action="/">-->
+<!--	  {% csrf_token %}-->
 
-        {% if status == 'Mute' %}
-	      <button type="submit" name="unmute">Unmute</button>
-	    {% endif %}
-	</form>
-    <form method="get" name ="radio_stop_form" action="/">
-	  {% csrf_token %}
+<!--        {% if status == 'Play' or status == 'Unmute' or status == 'Mute'%}-->
+<!--	      <button type="submit" name="stop">Stop</button>-->
+<!--	    {% endif %}-->
+<!--	</form>-->
 
-        {% if status == 'Play' or status == 'Unmute' or status == 'Mute'%}
-	      <button type="submit" name="stop">Stop</button>
-	    {% endif %}
-	</form>
+
+<p>&nbsp;</p>
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron">
+				<h2>
+					Radio
+				</h2>
+				<p>
+					<span class="badge badge-primary">Status : Playing -> {{frequency}}  {% if status == 'Mute' %} {{status}} {% endif %}</span>
+				</p>
+
+				<form method="get" name ="radio_form" action="?frequency">
+					{% csrf_token %}
+
+
+				<select class="browser-default custom-select custom-select-lg mb-3 dropdown-primary" id="frequency" name="frequency">
+					<option>Select Radio Channel</option>
+
+					<option value="91.1" {% if frequency == '91.1' %} selected="selected" {% endif %}>Radio City</option>
+					<option value="94.3" {% if frequency == '94.3' %} selected="selected" {% endif %}>Radio One</option>
+					<option value="93.5" {% if frequency == '93.5' %} selected="selected" {% endif %}>Red FM</option>
+					<option value="92.7" {% if frequency == '92.7' %} selected="selected" {% endif %}>Big FM</option>
+					<option value="98.3" {% if frequency == '98.3' %} selected="selected" {% endif %}>Radio Mirchi</option>
+					<option value="102.4" {% if frequency == '102.4' %} selected="selected" {% endif %}>Mirchi Lover</option>
+				</select>
+
+				<button type="submit" class="btn btn-success" name="play">Play</button>
+
+				{% if status == 'Play' or status == 'Unmute' %}
+				<button type="submit" name="mute" class="btn btn-warning">Mute</button>
+				{% endif %}
+
+				{% if status == 'Mute' %}
+				<button type="submit" name="unmute" class="btn btn-warning">Unmute</button>
+				{% endif %}
+				</form>
+
+				<form method="get" name ="radio_stop_form" action="/">
+				{% csrf_token %}
+
+				{% if status == 'Play' or status == 'Unmute' or status == 'Mute'%}
+				<button type="submit" name="stop" class="btn btn-danger">Stop</button>
+				{% endif %}
+				</form>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 
 </body>
 </html>
